@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<students>
+    <student>
+        <id>5</id>
+        <firstName>Kirill</firstName>
+        <lastName>Ivanov</lastName>
+        <birthDate>13.12.1992</birthDate>
+        <course>1</course>
+    </student>
+    <student>
+        <id>5</id>
+        <firstName>Lirik</firstName>
+        <lastName>Denisov</lastName>
+        <birthDate>10.05.1994</birthDate>
+        <course>2</course>
+    </student>
+    <student>
+        <id>5</id>
+        <firstName>Kirill</firstName>
+        <lastName>Antonov</lastName>
+        <birthDate>24.11.1993</birthDate>
+        <age>15</age>
+    </student>
+    <student>
+        <id>5</id>
+        <firstName>Kirill</firstName>
+        <lastName>Borisov</lastName>
+        <birthDate>17.06.1992</birthDate>
+        <course>3</course>
+    </student>
+</students>
