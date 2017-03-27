@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="bankSimulation" />
+        <module name="unc-home" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="bankSimulation" target="1.6" />
+      <module name="unc-home" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

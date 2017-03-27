@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "student")
-@XmlType(propOrder = {"id","firstName","lastName","birthDate","course"})
+@XmlType(propOrder = {"id", "firstName", "lastName", "birthDate", "course"})
 public class Student {
     private int id;
     private String birthDate;
@@ -52,4 +52,8 @@ public class Student {
         this.course = course;
     }
 
+    @Override
+    public String toString() {
+        return "id:" + id + "\nbirthDate:" + birthDate + "\nfirstName:" + firstName + "\nlastName:" + lastName + "\ncourse:" + course + "\n\n";
+    }
 }

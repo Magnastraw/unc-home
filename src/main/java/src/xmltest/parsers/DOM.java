@@ -24,7 +24,7 @@ public class DOM {
     public DOM() throws ParserConfigurationException, IOException, SAXException, TransformerException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        document = builder.parse("file.xml");
+        document = builder.parse("dom.xml");
         root = document.getFirstChild();
         studentList = document.getElementsByTagName("student");
 
@@ -42,7 +42,6 @@ public class DOM {
         }
 
     }
-
 
     public void deleteParameter(int pos, String paramType) throws TransformerException {
         Node student = studentList.item(pos);
@@ -69,7 +68,7 @@ public class DOM {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource domSource = new DOMSource(document);
-        StreamResult streamResult = new StreamResult(new File("file.xml"));
+        StreamResult streamResult = new StreamResult(new File("dom.xml"));
         transformer.transform(domSource, streamResult);
     }
 }

@@ -15,11 +15,10 @@ public class JAXB {
     public JAXB() throws JAXBException {
         JAXBContext context = JAXBContext.newInstance(Students.class);
         Unmarshaller unmarshaller = context.createUnmarshaller();
-        students = (Students) unmarshaller.unmarshal( new File("file.xml") );
+        students = (Students) unmarshaller.unmarshal( new File("jaxb.xml") );
 
         for(Student student : students.getStudents()) {
-            System.out.println(student.getId());
-            System.out.println(student.getFirstName());
+            System.out.println(student);
         }
     }
 
@@ -41,7 +40,6 @@ public class JAXB {
         JAXBContext context = JAXBContext.newInstance(Students.class);
         Marshaller marshaller= context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-       // marshaller.marshal(students, System.out);
-        marshaller.marshal(students, new File("file1.xml"));
+        marshaller.marshal(students, new File("jaxb.xml"));
     }
 }

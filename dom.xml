@@ -1,26 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <students>
     <student>
-        <id>5</id>
+        <id>1</id>
         <firstName>Kirill</firstName>
         <lastName>Ivanov</lastName>
         <birthDate>13.12.1992</birthDate>
         <course>1</course>
     </student>
     <student>
-        <id>5</id>
+        <id>2</id>
+        <firstName>Lirik</firstName>
         <lastName>Denisov</lastName>
         <birthDate>10.05.1994</birthDate>
         <course>2</course>
     </student>
     <student>
-        <id>5</id>
+        <id>3</id>
         <firstName>Kirill</firstName>
         <lastName>Antonov</lastName>
         <birthDate>24.11.1993</birthDate>
+        <course>5</course>
     </student>
     <student>
-        <id>5</id>
+        <id>4</id>
         <firstName>Kirill</firstName>
         <lastName>Borisov</lastName>
         <birthDate>17.06.1992</birthDate>
