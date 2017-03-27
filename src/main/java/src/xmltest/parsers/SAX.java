@@ -6,13 +6,16 @@ import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.AttributesImpl;
 import org.xml.sax.helpers.DefaultHandler;
+import src.xmltest.Parser;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
+import javax.xml.transform.TransformerException;
 import java.io.*;
 
-public class SAX extends DefaultHandler {
+public class SAX extends DefaultHandler implements Parser{
     private String currentElement;
     private String paramName;
     private String content;
@@ -31,13 +34,15 @@ public class SAX extends DefaultHandler {
         out.writeStartDocument();
     }
 
+    @Override
     public void updateParameter(int pos, String paramName, String content) {
-        this.update = false;
+        this.update = true;
         this.paramName = paramName;
         this.content = content;
         this.pos = pos;
     }
 
+    @Override
     public void addParameter(int pos, String paramName, String content) {
         this.add = true;
         this.paramName = paramName;
@@ -45,10 +50,16 @@ public class SAX extends DefaultHandler {
         this.pos = pos;
     }
 
+    @Override
     public void deleteParameter(int pos, String paramName) {
         this.delete = true;
         this.pos = pos;
         this.paramName = paramName;
+    }
+
+    @Override
+    public void updateXml() {
+
     }
 
     @Override
@@ -60,7 +71,7 @@ public class SAX extends DefaultHandler {
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         currentElement = qName;
-        if (currentElement.equals("student")) {
+        if (qName.equals("student")) {
             elementPos++;
         }
         if (delete) {
@@ -72,7 +83,6 @@ public class SAX extends DefaultHandler {
             }
 
         }
-
         if (!deleteElement) {
             try {
                 out.writeStartElement(qName);
@@ -97,9 +107,10 @@ public class SAX extends DefaultHandler {
                     } catch (XMLStreamException e) {
                         e.printStackTrace();
                     }
+                    add = false;
                 }
+
             }
-            add = false;
         }
         if (!deleteElement) {
             try {
@@ -137,9 +148,10 @@ public class SAX extends DefaultHandler {
                         ch = content.toCharArray();
                         start = 0;
                         length = ch.length;
+                        update = false;
                     }
                 }
-                update = false;
+
             }
             if(!deleteElement){
                 try {

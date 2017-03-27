@@ -7,7 +7,7 @@
         <course>1</course>
     </student>
     <student>
-        
+        <id>2</id>
         <firstName>Ddd</firstName>
         <lastName>Denisov</lastName>
         <birthDate>10.05.1994</birthDate>
@@ -22,7 +22,7 @@
     </student>
     <student>
         <id>4</id>
-        <firstName>Kirill</firstName>
+        
         <lastName>Borisov</lastName>
         <birthDate>17.06.1992</birthDate>
         <course>3</course>

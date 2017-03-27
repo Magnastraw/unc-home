@@ -15,7 +15,7 @@
         <course>2</course>
     </student>
     <student>
-        <id>3</id>
+        <id>6</id>
         <firstName>Kirill</firstName>
         <lastName>Antonov</lastName>
         <birthDate>24.11.1993</birthDate>

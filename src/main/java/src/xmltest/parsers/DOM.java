@@ -3,6 +3,7 @@ package src.xmltest.parsers;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
+import src.xmltest.Parser;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,7 +17,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 import java.io.IOException;
 
-public class DOM {
+public class DOM implements Parser {
     private Document document;
     private Node root;
     private NodeList studentList;
@@ -31,6 +32,7 @@ public class DOM {
 
     }
 
+    @Override
     public void updateParameter(int pos, String paramName, String content) throws TransformerException {
         Node student = studentList.item(pos);
         NodeList studentParams = student.getChildNodes();
@@ -43,6 +45,7 @@ public class DOM {
 
     }
 
+    @Override
     public void deleteParameter(int pos, String paramType) throws TransformerException {
         Node student = studentList.item(pos);
         NodeList studentParams = student.getChildNodes();
@@ -56,6 +59,7 @@ public class DOM {
 
     }
 
+    @Override
     public void addParameter(int pos, String paramName, String content) throws TransformerException {
         Node student = studentList.item(pos);
         Element additionElement = document.createElement(paramName);
